@@ -2,6 +2,7 @@ import { useState } from "react";
 import { changeUrl } from "../api/url";
 import { Copy, CheckCircle2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useAuth } from "../store";
 
 export default function Home() {
   const [originalUrl, setOriginalUrl] = useState("");
@@ -9,7 +10,7 @@ export default function Home() {
   const [shortUrl, setShortUrl] = useState("");
   const [copied, setCopied] = useState(false);
   const [error, setError] = useState("");
-
+  const { token } = useAuth();
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
@@ -17,7 +18,7 @@ export default function Home() {
     setCopied(false);
 
     try {
-      const response = await changeUrl({ originalUrl, shortPath });
+      const response = await changeUrl({ originalUrl, shortPath },token);
       setShortUrl(response.data.shortUrl);
     } catch (err) {
       setError(err.response?.data?.message || "Something went wrong.");
@@ -32,7 +33,7 @@ export default function Home() {
 
   return (
     <motion.div
-      className="min-h-[calc(100vh-128px)] bg-gradient-to-br from-black to-gray-900 text-white flex flex-col items-center px-4 "
+      className="min-h-[calc(100vh-128px)] bg-gradient-to-br from-black to-gray-900 text-white flex flex-col items-center justify-center px-4 "
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
@@ -44,7 +45,7 @@ export default function Home() {
         transition={{ delay: 0.2, duration: 0.6 }}
       >
         <h1 className="text-4xl md:text-5xl font-bold text-[#00ffc2]">
-          🔗 URL Shortener
+          🔗 Custom URL
         </h1>
         <p className="text-gray-300 mt-2 text-sm md:text-base">
           Create clean, customized, and shareable short URLs
@@ -78,7 +79,7 @@ export default function Home() {
             type="submit"
             className="w-full bg-[#00ffc2] hover:bg-[#00e6b3] text-black font-semibold py-2 rounded transition duration-200"
           >
-            🔧 Create Short URL
+            🔧 Create custom URL
           </button>
         </form>
 
@@ -92,7 +93,7 @@ export default function Home() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4 }}
             >
-              <span className="text-sm text-gray-300">Your Short URL:</span>
+              <span className="text-sm text-gray-300">Your custom URL:</span>
               <div className="flex items-center gap-2">
                 <a
                   href={shortUrl}

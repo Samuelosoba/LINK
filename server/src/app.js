@@ -5,6 +5,7 @@ import createHttpError, { isHttpError } from "http-errors";
 
 // Routes
 import urlRoutes from "./routes/url.js";
+import userRoute from "./routes/user.js"
 import { redirectUrl } from "./controller/url.js"; // ✅ Import redirect handler directly
 
 const app = express();
@@ -31,6 +32,7 @@ app.get("/", (req, res) => {
 
 // API route (shorten)
 app.use("/api/url", urlRoutes);
+app.use("/api/auth", userRoute)
 
 // ✅ Redirect route — must come after API routes and ABOVE error handler
 app.get("/:shortPath", redirectUrl);

@@ -1,0 +1,58 @@
+📊 Tracking & Analytics (Advanced)
+Click Count
+Show how many times each short link has been clicked.
+
+Date Created
+Display when the link was generated.
+
+Referrer Info (Optional)
+Log where the click came from (browser, location, etc.).
+
+🧠 Smart Features
+QR Code Generator
+Let users generate a QR code of the short link (using a library like qrcode.react).
+
+Link Expiry Option
+Allow users to set an expiry time/date for their short link.
+
+Password-Protected Links
+Let users set a password to access a link.
+
+👤 User Features
+User Accounts (Authentication)
+
+Login/register
+
+View list of links they’ve created
+
+Link Management Dashboard
+A table/grid showing:
+
+Original URL
+
+Short URL
+
+Clicks
+
+Delete/Edit options
+
+🎨 UI Enhancements
+Dark/Light Mode Toggle
+Add theme switching with local storage support.
+
+Hero Section with Animations
+Animated text/image using Framer Motion on page load.
+
+Toast Notifications
+Show success/error messages using react-hot-toast or sonner.
+
+🧪 Utility Features
+Form Validation
+Check if the entered URL is valid, or if the short path is taken (in real-time).
+
+Rate Limiting / Spam Prevention
+Limit how frequently users can shorten URLs (basic throttling).
+
+Auto Generate Short Path
+If user doesn't provide a custom path, generate a random 6-character one.
+

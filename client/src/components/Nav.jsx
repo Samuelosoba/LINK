@@ -18,6 +18,9 @@ export default function Nav() {
           <Link to="/" className="hover:text-[#00ffc2] transition">
             Home
           </Link>
+          <Link to="/dashboard" className="hover:text-[#00ffc2] transition">
+            Dashboard
+          </Link>
           <a href="#features" className="hover:text-[#00ffc2] transition">
             Features
           </a>

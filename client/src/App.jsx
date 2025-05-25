@@ -1,6 +1,11 @@
-import React from "react";
+import { Toaster } from "sonner";
 import AppRoute from "./routes/AppRoute";
 
 export default function App() {
-  return <AppRoute />;
+  return (
+    <>
+      <Toaster richColors />
+      <AppRoute />
+    </>
+  );
 }
