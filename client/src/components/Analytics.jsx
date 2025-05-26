@@ -1,11 +1,11 @@
-// components/Analytics.jsx
+
 import { useEffect, useState } from "react";
 import { fetchAnalytics } from "../api/url";
 import { useParams } from "react-router";
 import { useAuth } from "../store";
 
 const Analytics = () => {
-  const { shortPath } = useParams(); // assumes route like /analytics/:shortPath
+  const { shortPath } = useParams(); 
   const [analytics, setAnalytics] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");

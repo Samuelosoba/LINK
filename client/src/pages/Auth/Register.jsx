@@ -43,7 +43,7 @@ export default function Register() {
           Sign Up
         </h2>
 
-        {/* Username */}
+      
         <div className="">
           <label className="label">
             <span className="label-text text-white">Username</span>
@@ -65,7 +65,7 @@ export default function Register() {
           )}
         </div>
 
-        {/* Email */}
+     
         <div className="">
           <label className="label">
             <span className="label-text text-white block">Email</span>

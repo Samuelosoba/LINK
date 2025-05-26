@@ -85,11 +85,11 @@ export const getUserStats = async (req, res) => {
   try {
     const userId = req.user.id;
 
-    // How many URLs owned by this user?
+    
     const totalLinks = await Url.countDocuments({ owner: userId });
     console.log(`User ${userId} owns ${totalLinks} links`);
 
-    // How many URLs have no owner at all? (anonymous links)
+    
     const totalAnonymous = await Url.countDocuments({
       owner: { $exists: false },
     });

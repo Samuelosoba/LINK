@@ -1,4 +1,4 @@
-// middleware/optionalAuth.js
+
 import jwt from "jsonwebtoken";
 
 const optionalAuth = (req, res, next) => {
@@ -15,7 +15,7 @@ const optionalAuth = (req, res, next) => {
       console.log("OptionalAuth decoded token:", decoded);
     } catch (err) {
       console.warn("Invalid token in optionalAuth — continuing anonymously");
-      // We don't throw here — just continue as guest
+     
     }
   }
 

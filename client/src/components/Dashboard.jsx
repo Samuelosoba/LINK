@@ -14,7 +14,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     if (!token) {
-      // no token? redirect to login
+   
       navigate("/auth/login");
       return;
     }
@@ -51,7 +51,7 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-[#00ffc2] to-[#008f6b] text-white flex">
-      {/* Sidebar */}
+     
       <div className="w-64 bg-black  backdrop-blur-md border-[#008f6b] p-6 flex flex-col">
         <h2 className="text-3xl font-bold mb-8">My Dashboard</h2>
         <nav className="flex flex-col space-y-4 text-lg">
@@ -88,7 +88,7 @@ export default function Dashboard() {
         </button>
       </div>
 
-      {/* Main content */}
+    
       <main className="flex-1 p-8">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -106,7 +106,7 @@ export default function Dashboard() {
           transition={{ delay: 0.3, duration: 0.6 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
-          {/* Stats cards */}
+        
           <div className="bg-black bg-opacity-30 backdrop-blur-md rounded-lg p-6 shadow-lg">
             <h3 className="text-xl font-semibold mb-2">Total Links</h3>
             <p className="text-4xl font-bold">{stats?.totalLinks ?? 0}</p>

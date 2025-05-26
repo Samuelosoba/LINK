@@ -25,7 +25,7 @@ export default function Links() {
     navigator.clipboard.writeText(url);
   };
 
-  // 🔍 Filter links based on shortPath
+  
   const filteredLinks = links.filter((link) =>
     link.shortPath.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -34,7 +34,6 @@ export default function Links() {
     <div className="p-6 text-white">
       <h2 className="text-2xl font-bold mb-4">🔗 Your Shortened Links</h2>
 
-      {/* 🔎 Search input */}
       <input
         type="text"
         placeholder="Search by short URL..."

@@ -13,7 +13,7 @@ export const changeUrl = async (req, res) => {
   const newUrl = new Url({
     originalUrl,
     shortPath,
-    owner: owner || undefined, // Save owner only if exists
+    owner: owner || undefined, 
   });
 
   await newUrl.save();
@@ -24,7 +24,7 @@ export const changeUrl = async (req, res) => {
   });
 };
 
-// GET /:shortPath - redirect
+
 export const redirectUrl = async (req, res) => {
   const { shortPath } = req.params;
 
@@ -52,7 +52,7 @@ export const redirectUrl = async (req, res) => {
 };
 
 
-// PATCH /url/:shortPath - edit URL
+
 export const updateUrl = async (req, res, next) => {
   const { shortPath } = req.params;
   const { originalUrl, newShortPath } = req.body;
@@ -63,7 +63,7 @@ export const updateUrl = async (req, res, next) => {
       return res.status(404).json({ message: "Short URL not found." });
     }
 
-    // If newShortPath is provided and different, check if it's taken
+    
     if (newShortPath && newShortPath !== shortPath) {
       const exists = await Url.findOne({ shortPath: newShortPath });
       if (exists) {
@@ -88,7 +88,7 @@ export const updateUrl = async (req, res, next) => {
   }
 };
 
-// DELETE /url/:shortPath - delete URL
+
 export const deleteUrl = async (req, res, next) => {
   const { shortPath } = req.params;
 
@@ -105,7 +105,7 @@ export const deleteUrl = async (req, res, next) => {
     next(error);
   }
 };
-// GET /api/url/user-links
+
 export const getUserLinks = async (req, res) => {
   try {
     const userId = req.user?.id;
@@ -136,7 +136,7 @@ export const getAnalytics = async (req, res) => {
       createdAt: urlEntry.createdAt,
       updatedAt: urlEntry.updatedAt,
       lastAccessed: urlEntry.clickDetails.slice(-1)[0]?.timestamp || null,
-      clickDetails: urlEntry.clickDetails, // You can remove this in prod
+      clickDetails: urlEntry.clickDetails, 
     });
   } catch (error) {
     res.status(500).json({ message: "Server error" });

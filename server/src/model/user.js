@@ -18,7 +18,7 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: [true, "Password is required"],
-    select: false, //prevents this field from been sent to the frontend
+    select: false, 
     minLength: [5, "Password must be at least 5 characters"],
   },
 
