@@ -1,7 +1,7 @@
 import React from "react";
-import CreateLink from "../components/CreateLink";
+import CreateLink from "./CreateLink";
 
-export default function Home() {
+export default function CreateAlink() {
   return (
     <div>
       <CreateLink />

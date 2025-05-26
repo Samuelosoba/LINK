@@ -68,10 +68,10 @@ export default function Dashboard() {
             Link
           </Link>
           <Link
-            to="/dashboard/analytics/:shortPath"
+            to="/dashboard/createlink"
             className="hover:text-[#00b38f] transition-colors duration-300"
           >
-            Analytics
+           Create Link
           </Link>
           <a
             href="#"

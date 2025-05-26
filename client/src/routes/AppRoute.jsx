@@ -1,4 +1,6 @@
 import Analytics from "../components/Analytics";
+import CreateAlink from "../components/createAlink";
+
 import Dashboard from "../components/Dashboard";
 import DashboardHome from "../components/DashboardHome";
 import Links from "../components/Links";
@@ -37,16 +39,20 @@ export default function AppRoute() {
           element: <Dashboard />,
           children: [
             {
-              index: true, // 👈 this means /dashboard shows this
+              index: true, 
               element: <DashboardHome />,
             },
             {
               path: "user-links",
-              element: <Links />, // your page with short links
+              element: <Links />, 
             },
             {
               path: "analytics/:shortPath",
               element: <Analytics />,
+            },
+            {
+              path: "createlink",
+              element: <CreateAlink/>,
             },
           ],
         },
